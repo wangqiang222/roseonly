@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.shop_bar{
+				height: 300px;
+				width: 50px;
+				background-color: #414141;
+				position: fixed;
+				right: 0px;
+				
+			}
+			.u-flyer{display: block;width: 50px;height: 50px;border-radius: 50px;position: fixed;z-index: 9999;}
+			#msg{position:fixed; top:300px; right:35px; z-index:10000; width:1px; height:52px; line-height:52px; font-size:20px; text-align:center; color:#fff; background:#360; display:none}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/roseonly.css"/>
+		<link href="img/title_icon.png" rel="icon" />
+		<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/new_file.js" ></script>
+		<script type="text/javascript" src="js/jquery.fly.min.js"></script>
+		<script>
+		$(function() {
+			var offset = $("#end").offset();  //结束的地方的元素
+			$(".buy").click(function(event){   //是$(".addcar")这个元素点击促发的 开始动画的位置就是这个元素的位置为起点
+				var addcar = $(this);
+				var img = $("#msg").parent().find('img').attr('src');
+				var flyer = $('<img class="u-flyer" src="'+img+'">');
+				flyer.fly({
+					start: {
+						left: event.pageX,
+						top: event.pageY
+					},
+					end: {
+						left: offset.left+10,
+						top: offset.top+10,
+						width: 0,
+						height: 0
+					},
+					onEnd: function(){
+						$("#msg").show().animate({width: '250px'}, 200).fadeOut(1000);
+						addcar.unbind('click');
+						this.destory();
+					}
+				});
+			});
+		  
+		});
+		</script>
+	</head>
+	<body>
+		
+		<div class="shop_bar">
+			<i id="end"></i>购物车
+		</div>
+		<!--客服-->
+		<a href="#" class="service">
+			<img src="img/14703636967439422.svg" />
+		</a>
+		<!--header begin-->
+		<header>
+			<div class="wrapper">
+				<div class="left">
+					<a href="index.html" class="logo_01"></a>
+					<a href="#" class="logo_02"></a>
+				</div>
+				<div class="right">
+					<a href="login.html">登录</a>
+					<span>|</span>
+					<a href="#">注册</a>
+					<span>|</span>
+					<a href="#" class="shop"></a>(0)
+				</div>
+			</div>
+		</header>
+		<!--header end-->
+		<!--logo begin-->
+		<div class="logo">
+			<img src="img/14659848743575108.png" />
+		</div>
+		<!--logo end-->
+		<!--nav begin-->
+		<nav>
+			<ul class="wrapper">
+				<li>
+					<a href="#">鲜花玫瑰</a>
+				</li>
+				<li>
+					<a href="#">永生玫瑰</a>
+				</li>
+				<li>
+					<a href="#">玫瑰珠宝</a>
+				</li>
+				<li>
+					<a href="#">生日推荐</a>
+				</li>
+				<li>
+					<a href="#">love roseonly</a>
+				</li>
+				<li>
+					<a href="#">专卖店</a>
+				</li>
+				<li>
+					<a href="#">诺誓世界</a>
+				</li>
+			</ul>
+		</nav>
+		<!--nav end-->
+		<!--shop_detail begin-->
+		<div class="shop_detail">
+			<div class="details">
+				<div class="details_l">
+					<div class="icon"></div>
+					<div class="text">
+						Classic
+						<br />
+						经典永续
+					</div>
+					<div class="name">
+						经典
+						<span>
+							朱砂
+						</span>
+					</div>
+				</div>
+				<div class="details_m">
+					<img src="img/14701945928768231.png" />
+					<div id="msg">加入购物车成功</div>
+				</div>
+				<div class="details_r">
+					<div class="title">经典永续 - 经典朱砂</div>
+					<div class="num">鲜花玫瑰 19支 R010101121</div>
+					<div class="price">￥1999.0</div>
+					<div class="select">
+						<div class="select_tit">可选颜色：</div>
+						<div class="choose_color">
+							<span class="color_a active"></span>
+							<span class="color_b"></span>
+							<span class="color_c"></span>
+							<span class="color_d"></span>
+							<span class="color_e"></span>
+							<span class="color_f"></span>
+						</div>
+					</div>
+					<div class="select">
+						<div class="select_tit">购买数量：</div>
+						<img src="img/icon_down.png" />
+						<span class="num">1</span>
+						<img src="img/icon_up.png" />
+					</div>
+					<div class="btn">
+						
+							<button type="button" class="buy addcar">立即购买</button>
+						
+						<a href="shop_car.html">
+							<button type="button" class="car">加入购物车</button>
+						</a>
+					</div>
+					<div class="list">
+						<div class="pre"><</div>
+						<ul>
+							<li class="active">
+								<img src="img/14798037312499118.png" />
+								
+							</li>
+							<li>
+								<img src="img/14798037312499118.png" />
+							</li>
+							<li>
+								<img src="img/14798037312499118.png" />
+							</li>
+							<li>
+								<img src="img/14798037312499118.png" />
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<img src="img/xq_08.png" />
+			<img src="img/14793502719997051.jpg" />
+			<img src="img/14793502720671898.jpg" />
+			<img src="img/14793502722135165.jpg" />
+			<img src="img/14793502722611280.jpg" />
+			<img src="img/14793502723248585.jpg" />
+			<img src="img/14823775491713298.jpg" />
+			<div class="details_mostcar">
+				<div class="left">
+					<div class="title">
+						Caring Notes<br />
+						<b>保养物语</b>
+					</div>
+					<p>细心呵护保养，成就roseonly永恒之美</p>
+					<a href="#">点击查看详情</a>
+				</div>
+				<div class="right">
+					<div class="title">
+						Exchange<br />
+						<b>退换条例</b>
+					</div>
+					<p>下单后有任何问题，请及时联系客服</p>
+					<a href="#">点击查看详情</a>
+				</div>
+				<div class="clear"></div>
+				
+			</div>
+		</div>
+		<div class="line_sd"></div>
+		<!--shop_detail end-->
+		<!--footer begin-->
+		<div class="footer">
+			<div class="top wrapper">
+		    	<div class="logo left">
+		        	<img src="img/14652903297966422.jpg" />
+		            <p>
+		            	关注我们
+		                <img src="img/14652897662274880.jpg" />
+		                <img src="img/14652897713466258.png" />
+		            </p>
+		        </div>
+		        <ul>
+		        	<li>
+		            	<a href="#">新手指南</a>
+		            </li>
+		            <li>
+		            	<a href="#">购物流程</a>
+		            </li>
+		            <li>
+		            	<a href="#">支付方式</a>
+		            </li>
+		            <li>
+		            	<a href="#">常见问题</a>
+		            </li>
+		        </ul>
+		        
+		        <ul>
+		        	<li>
+		            	<a href="#">售后服务</a>
+		            </li>
+		            <li>
+		            	<a href="#">退款说明</a>
+		            </li>
+		            <li>
+		            	<a href="#">保养物语</a>
+		            </li>
+		        </ul>
+		        <ul>
+		        	<li>
+		            	<a href="#">物流配送</a>
+		            </li>
+		            <li>
+		            	<a href="#">配送方式</a>
+		            </li>
+		            <li>
+		            	<a href="#">配送服务</a>
+		            </li>
+		        </ul>
+		       	<ul>
+		        	<li>
+		            	<a href="#">关于我们</a>
+		            </li>
+		            <li>
+		            	<a href="#">品牌介绍</a>
+		            </li>
+		            <li>
+		            	<a href="#">联系我们</a>
+		            </li>
+		            <li>
+		            	<a href="#">加入我们</a>
+		            </li>
+		        </ul>
+		        <div class="right">
+		        	<img src="img/14652903743497300.jpg" />
+		        </div>
+		    </div>
+		    <div class="bottom">
+		    	京ICP备13007738号 京公网安备11010502023922 www.roseonly.com.cn；诺誓（北京）商业股份有限公司
+		    </div>
+		</div>
+		<!--footer end-->
+	</body>
+</html>

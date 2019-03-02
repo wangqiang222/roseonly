@@ -1,0 +1,9 @@
+index:主页
+login:登录页
+person:个人订单
+shop_car:购物车
+shop_detail:商品详情
+shop_show:商品展示
+
+class命名说明
+
